@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="static/style.css">
+
+        
+          
+    <title>ForestFirePrediction</title>
+</head>
+<body>
+    <!-- NavBar Started -->
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Forest Fire Prediction</a>
+          <ul class="right hide-on-med-and-down">
+            <!-- <li><a href="index.html"><i class="material-icons">search</i></a></li>
+            <li><a href="index.html"><i class="material-icons">view_module</i></a></li> -->
+            <li><a href="index.html"><i class="material-icons">refresh</i></a></li>
+            <!-- <li><a href="index.html"><i class="material-icons">more_vert</i></a></li> -->
+          </ul>
+        </div>
+      </nav>
+    <!-- End of NavBar -->
+    <div class="container">
+        <div class="row">
+            <form class="col s12" action="/predict" method="post" >
+            <div class="row">
+                <div class="input-field col s3">
+                <input placeholder="Oxygen" id="first_name" name="oxygen" type="number" class="validate">
+                <label for="first_name">Oxygen</label>
+                </div>
+                <div class="input-field col s3">
+                    <input placeholder="Temperature" id="first_name" name="temperature" type="number" class="validate">
+                    <label for="first_name">Temperature</label>
+                </div>
+                <div class="input-field col s3">
+                    <input placeholder="Humidity" id="first_name" name="humidity" type="number" class="validate">
+                    <label for="first_name">Humidity</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" style="background-color: #0053ff;" type="submit">Predict
+                <i class="material-icons right">send</i>
+            </button>
+            </form>
+        </div>
+        <br>
+        <h4>{{pred}}</h4>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
