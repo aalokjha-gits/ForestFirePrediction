@@ -9,7 +9,7 @@ import pickle
 warnings.filterwarnings("ignore")
 
 # Importing the dataset
-dataset = pd.read_csv('Forest_fire.csv')
+dataset = pd.read_csv('./dataset/forest_fire.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 
@@ -30,3 +30,10 @@ classifier.fit(X_train, y_train)
 
 pickle.dump(classifier,open('model.pkl','wb'))
 model = pickle.load(open('model.pkl','rb'))
+
+# y_pred = classifier.predict(X_test)
+
+# from sklearn.metrics import confusion_matrix, accuracy_score
+# cm = confusion_matrix(y_test, y_pred)
+# print(cm)
+# print(accuracy_score(y_test, y_pred))
