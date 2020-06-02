@@ -27,21 +27,33 @@
         </div>
       </nav>
     <!-- End of NavBar -->
+
     <div class="container">
+        <!-- City Prediction Form -->
         <div class="row">
-            <form class="col s12" action="/predict" method="post" >
+            <form class="col s12" action="/predict_by_city" method="post" >
             <div class="row">
                 <div class="input-field col s3">
-                <input placeholder="Oxygen" id="first_name" name="oxygen" type="number" class="validate">
-                <label for="first_name">Oxygen</label>
+                <input placeholder="City_name" id="first_name" name="city_name" type="text" class="validate">
+                <label for="city_name">City_name</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" style="background-color: #0053ff;" type="submit">Predict
+                <i class="material-icons right">send</i>
+            </button>
+            </form>
+        </div>
+        <!-- GeoLocation Prediction Form -->
+        <div class="row">
+            <form class="col s12" action="/predict_by_geocordinate" method="post" >
+            <div class="row">
+                <div class="input-field col s3">
+                    <input placeholder="Latitude" id="first_name" name="latitude" type="text" class="validate">
+                    <label for="longitude">Latitude</label>
                 </div>
                 <div class="input-field col s3">
-                    <input placeholder="Temperature" id="first_name" name="temperature" type="number" class="validate">
-                    <label for="first_name">Temperature</label>
-                </div>
-                <div class="input-field col s3">
-                    <input placeholder="Humidity" id="first_name" name="humidity" type="number" class="validate">
-                    <label for="first_name">Humidity</label>
+                    <input placeholder="Longitude" id="first_name" name="longitude" type="text" class="validate">
+                    <label for="longitude">Longitude</label>
                 </div>
             </div>
             <button class="btn waves-effect waves-light" style="background-color: #0053ff;" type="submit">Predict
@@ -52,7 +64,26 @@
         <br>
         <h4>{{pred}}</h4>
     </div>
+    
+    <!-- GMap --> 
+    <center><h4><u>Get The latitude and longitude form map below.</u></h4></center>  
+    <div id="map" style="width: 100%; height: 500px;"></div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <center><h6>Made with <i class="material-icons">favorite</i>with Programming</h6></center>
+        <div class="footer-copyright">
+          <div class="container">
+          <center>© 2014 Copyright Text</center>
+          </div>
+        </div>
+    </footer>
+
     <!-- Compiled and minified JavaScript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLrX2Zh2n4C33Idf33-cSQwZo6WgkSftc&callback=initMap">
+    </script>
+    <script src="./static/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
